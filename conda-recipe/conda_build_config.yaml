@@ -1,0 +1,9 @@
+python:
+  - 3.6
+  - 3.7
+pytorch_variant:
+  - gpu
+  - cpu
+CONDA_BUILD_SYSROOT:
+  - /opt/MacOSX10.9.sdk        # [osx]
+
