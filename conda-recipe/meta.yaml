@@ -21,13 +21,13 @@ requirements:
   host:
     - python {{ python }}
     - pytorch>=1.3
-    - cuda100 # [pytorch_variant == "gpu"]
+    - pytorch-{{ pytorch_variant }}
     - pip
 
   run:
     - python
     - pytorch>=1.3
-    - cuda100 # [pytorch_variant == "gpu"]
+    - pytorch-{{ pytorch_variant }}
     - torchvision
     - opencv
     - pycocotools
@@ -43,14 +43,9 @@ requirements:
     - pydot
 
 test:
-  requires:
-    - flake8
-    - isort
-    - black=19.3b0
-    - flake8-bugbear
-    - flake8-comprehensions
   imports:
     - detectron2
+    - detectron2.model_zoo
 
   # You can also put a file called run_test.py, run_test.sh, or run_test.bat
   # in the recipe that will be run at test time.
